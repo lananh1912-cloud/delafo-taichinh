@@ -80,7 +80,7 @@ def main():
             print("[%d/%d] %s LOI: %s" % (i + 1, len(tickers), t, str(e)[:150]))
         time.sleep(1)  # tranh rate limit
     if not frames:
-        sys.exit("Khong tai duoc ma nao. Gui thong bao loi o tren cho Claude de doi nguon.")
+        sys.exit("Khong tai duoc ma nao - cần doi nguon.")
     fin = pd.concat(frames, ignore_index=True)
     fin = fin.dropna(subset=["PB", "PE", "ROAA", "ROEA"], how="all")
     fin = fin[fin.quarter.isin([1, 2, 3, 4])]
